@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>我已预见你一贯的未来</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=750, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/tour.css">
+    <link rel="stylesheet" type="text/css" href="css/reveal.css">
+    <script src="js/jquery-1.4.4.min.js"></script>
+    <script src='js/xingzuo.js'></script>
+    <script src="tour.js"></script>
+    <script src='js/jquery.reveal.js'></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<div id="loading">
+    <img src="images/loading.gif" id="loading-img">
+</div>
+<div id="tutorial"></div>
+<div id="myElementId" class="outPopWindow">
+    <div id="xingzuo" class="width-height-100" style="position:relative">
+        <p class="xingzuo-title"></p>
+        <img class="xingzuo-image" src="">
+        <div class="future-div" style="width:100%">
+            <div class="future-button">
+                <p id="future-button-text">探索未来</p>
+            </div>
+        </div>
+        <img src="images/Return.png" class="return-index" id="back-index">
+    </div>
+</div>
+<div id="xingzuo-content" class="outPopWindow">
+    <div id="content" class="width-height-100" style="position:relative">
+        <a onclick="closePopup('xingzuo-content')" class="return-index"><img src="images/Return.png"></a>
+        <img src='images/tagglestyle.png' class='click-tips'>
+        <div id='click_area' onclick="toggleStyle()"></div>
+        <!-- <div id='another_click_area' onclick="toggleStyle()"></div> -->
+        <div id="content_1" class='content-style'>
+            <div class='content-title title1'>综合运势</div>
+            <div class='all_fortune list-block'>
+                <span class='all_fortune_content content_style'>羊羊水星开始顺行喽,撒花！投资理财的小高潮也随之而来,有计划投资的羊羊们可以开始行动啦收效会明显高于其他时段哦!</span>
+            </div>
+            <div class='best_patner list-block'>
+                <span class='best_patner_title title-style'>最佳伙伴：</span>
+                <span class='best_patner_content content_style'>狮子座  天秤座 水平座 天蝎座</span>
+            </div>
+            <div class='health_fortune list-block'>
+                <span class='health_fortune_title title-style'>健康运势：</span>
+                <span class='health_fortune_content content_style'>总是精力十足的白羊今年会不时地感觉到身心上的疲累，你需要找到适合情绪宣泄的出口。定期的体检对你很有必要。</span>
+            </div>
+        </div>
+        <div id='content_2' class='content-style'>
+            <div class='content-title'>财富运势</div>
+            <div class='money_fortune_content content_style'><p>上半年羊儿的理财运势不甚理想，很可能一时头脑发热投资了不当的理财产品不过下半年你的偏财运即将启动，在小投资上颇有收成，比如理财产品的购买外债的回收等，切忌盲目进入大的风险投资。羊儿在金钱合作上容易受到情绪波动的影响所以定期理财、规划储蓄能帮助小羊避免一时冲动带来的判断失当</p>
+                <p>切忌盲目进入大的风险投资。羊儿在金钱合作上容易受到情绪波动的影响所以定期理财、规划储蓄能帮助</p></div>
+            <div id="view" class='more_detail'>查看详情</div>
+        </div>
+    </div>
+</div>
+<div id="my-experience" class="outPopWindow-1">
+    <div id="experience">
+        <div class='money-title'>恭喜您获得</div>
+        <div class='another-money-title'><span class="experience-money"></span><span>元</span></div>
+        <div class='third-money-title'>奖金</div>
+        <div class='use_condition'>可无条件提现(相当于10000元本金投资"小金贯"的3日收益)</div>
+        <div class='receive_condition'>领奖条件：无需投资，奖金将于11月20日之前进入你的一贯账户（相当于10000元本金投资"小金贯"的3日收益）。现在就注册“一贯”账户，将你的奖金提取到绑定的银行卡吧（10月28日24：00前绑卡有效）。</div>
+        <div class='reward_tip'>该收益按照浮动收益计算，不作为投资依据，详情参见一贯APP产品介绍。</div>
+        <button type='button' class='money-btn' id="go-register">马上注册一贯吧</button>
+    </div>
+</div>
+<div id='invite' class='width-height-100 outPopWindow-1'>
+    <div class='invite-title'>邀请好友</div>
+    <div class='another-invite-title'>立享优酷月卡</div>
+    <!-- <p style="text-align: justify;">将本活动分享给好友，当TA成功注册、绑卡并投资“一贯”的任意一款产品，并保持连续2个自然日投资余额皆不低于1000元，即可获得优酷月卡一张，多邀多得，最多可得20张优酷卡，还在等什么？</p> -->
+    <p style="text-align: justify;">将本活动页面分享给好友，当TA成功注册、绑定并投资“一贯”任意一款产品，投资金额不低于1000元，期限持续2日以上，你将获得优酷月卡一张，多邀多得，每位客户最多可得20张优酷月卡！活动结束后由“一贯”平台统计并通过短信的形式发放。文字下方是二维码及长按识别二维码进入微信公众号</p>
+    <button type='button' class='invite-btn' onclick="showSharePopup();">去分享</button>
+    <h1>"一贯"平台在法律允许范围内保留对本活动的解释权。</h1>
+</div>
+<div id="newbee" class="activity width-height-100 outPopWindow-1">
+    <div id="no-acitvity">
+        <img src="images/close.png" onclick="closePopup('newbee');" class='close'/>
+        <span class='activity-title margin-top'>你还未参与活动</span>
+        <span class='acitvity-tips'>现在就参加活动，查看你的本月运势，</span>
+        <span class='acitvity-tips'>中奖率100%！</span>
+    </div>
+</div>
+<div id='future' class="outPopWindow">
+    <a onclick="closePopup('future');"><img src="images/Return.png" class="return-index"></a>
+    <img class='app_detail' src='images/logo_app.png'>
+    <div class='future-title'>我已预见你一贯的未来</div>
+    <div class='future-text'>
+        您是积极型投资者，深谙“理财须趁早”的投资理念。很早就开始试水投资的您，早已积累了相当的理财经验，从不把鸡蛋放到同一个篮子里。多远化的投资理念，不但帮你分散了风险，还形成了良性的理财组合，多管齐下，多出生花。</br>
+        您不妨尝试一贯重点推荐的“小金贯”，基于零存活率的生活场景，为您提供高收益，存取灵活的投资方式，1000元起投，随存随取，支持多家银行卡在线购买。</br>
+        您的下一颗幸运星也许就藏在浩瀚的星空里，点击查看属于自己的幸运星吧！
+    </div>
+    <div class='future-to-index'>开始寻找</div>
+
+    <!--  <div><img src='images/return_to_main.png' class='return_to_main'></div> -->
+</div>
+<div id="see-rule" class="activity width-height-100 outPopWindow-1">
+    <div id="rule-content">
+        <span class='rule-title'>活动规则</span>
+        <span class='rule-tips'>活动时间：即日起至2016年10月28日结束。</span>
+        <span class='rule-tips'>活动规则：</span>
+        <span class="rule-tips">1.用户在活动首页的浩瀚星空中选择自己的星座，点击"探索未来"查看该星座在未来1个月的运势详情;</span>
+        <span class="rule-tips">2.通过点击“寻找幸运星”，返回星空定位到属于你的财运，首次输入手机号可随机获得奖励；</span>
+        <span class="rule-tips">小贯提醒：</span>
+        <span class="rule-tips">1.参与活动填写的手机号码务必与注册一贯或即将注册的手机号保持一致，填写后无法修改，输入错误将无法获得相应奖励。</span>
+        <span class="rule-tips">2.奖金及奖品发放日期为2016年11月20日。（奖金将直接发放至所注册的一贯账户，奖品则以电子券的形式通过短信的形式发送至注册手机号）</span>
+        <span class="rule-tips">3.具体奖金及奖品提取规则详见获奖页。</span>
+        <span class="rule-tips">4.通过恶意程序等非正常手段获取的礼品，一贯不予承认。</span>
+        <span class="rule-tips center-style">在法律允许范围内“一贯”保留对本活动的最终解释权。</span>
+        <span class="rule-tips center-style">客服热线：400-813-8888</span>
+    </div>
+    <a onclick="closePopup('see-rule');"><img src="images/Return.png" class="return-index"></a>
+</div>
+<div id='phone' class='width-height-100 outPopWindow'>
+    <a onclick="closePopup('phone');"><img src="images/Return.png" class="return-index"></a>
+    <div class='phone-title'>输入你的手机号</div>
+    <div class='phone-title'>查看你专属的财富运势</div>
+    <input type="text" name="openid" id="openid" value="<?php echo $openid ?>" hidden>
+    <input type='text' id="mobile" placeholder='请务必与注册一贯的手机号保持一致' class='phone-input'>
+    <div class="input_tip">请确认你的手机号正确</div>
+    <button type='button' class='phone-btn' id="sure">确定</button>
+    <button type='button' class='phone-btn' id="get-luck" style='display:none'>查看幸运</button>
+    <div id="error-info" style="display:none;color:red;font-size:30px;margin-top: 40px;"></div>
+    <div id='ensure' class="activity width-height-100 outPopWindow-1">
+        <p>请确认手机号码输入无误</p>
+        <p>点击"确定"后手机号将无法更改</p>
+        <button class="sure_btn" id="sure_btn" onclick="cancelnum()">返回</button>
+        <button class="sure_btn" id="cancel" onclick="ensurenum()">确定</button>
+    </div>
+</div>
+<div class='new_window' hidden>
+    <img src='images/close.png' class='window_close'>
+    <span class='window_title'>您已获得奖励</span>
+    <span class='window_content'>请返回首页查看您获得奖励</span>
+</div>
+<div class='background-cover'></div>
+<div class='app_window' hidden>
+    <div class='background-cover'></div>
+    <img class='app_close' src='images/app_close.png'>
+    <span class='app_title'>一贯是什么</span>
+    <div class='app_text'>
+        "一贯"是面向个人与企业的金融信息服务平台，依托恒丰银行完善的风控体系和业务运营能力，为用户提供专业、安全、便捷的金融信息服务。一贯平台精选了多种风险低、收益稳的理财产品，全力为客户打造便捷、实惠的用户体验。基于用户资金使用需求，平台目前主推"活期+"和"定期+"两个系列的金融产品。</br><br />
+        "活期+"目前的代表产品“小金贯”基于零存活用的需求，为用户提供收益高、存取灵活的活期投资产品，支持多家银行卡在线投资。<br /><br />
+        "定期+"基于不同的投资周期、年化收益率，为用户提供高收益、多样化的投资方式，目前主要包括“周周盈”和节假日专享产品。本系列支持多家银行卡在线投资，并支持使用小金贯内资金投资。<br /><br />
+        "基金"产品根据客户不同的风险偏好，精挑细选，为您量身定制投资组合。<br />
+    </div>
+</div>
+<div id="pano" class="width-height-100">
+    <noscript>
+        <table class="width-height-100">
+            <tr style="vertical-align:middle;">
+                <td>
+                    <div style="text-align:center;">
+                        ERROR:<br/><br/>Javascript not activated<br/><br/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </noscript>
+    <script>
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+           $('.future-text').css('font-size','18px');
+           $('.future-text').css('line-height','24px');
+        }
+        if(isiOS){
+    
+        }
+        var domain = '<?php echo DOMAIN ?>';
+        var userId = '<?php echo $openid ?>';
+        var has_get_reward = '<?php echo $has_get_reward ?>';
+        var reward = '<?php echo $reward ?>';
+        var goreg_url = '<?php echo GOREG_URL ?>';
+        var shared_mobile = '<?php echo $shared_mobile ?>';
+        wx.config({
+            debug: false,
+            appId: '<?php echo APPID ?>',
+            timestamp: "<?php echo $sign_package['timestamp'] ?>",
+            nonceStr: "<?php echo $sign_package['nonceStr'] ?>",
+            signature: "<?php echo $sign_package['signature'] ?>",
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+        });
+        wx.ready(function () {
+            wx.onMenuShareTimeline({
+                title: '我已预见你一贯的未来', // 分享标题
+                link: 'https://'+domain+'/index.php?share_openid='+userId, // 分享链接
+                imgUrl: 'https://'+domain+'/images/share.jpg', // 分享图标
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: '我已预见你一贯的未来', // 分享标题
+                desc: '探索VR虚拟现实，带你寻找“星”运礼物', // 分享描述
+                link: 'https://'+domain+'/index.php?share_openid='+userId, // 分享链接
+                imgUrl: 'https://'+domain+'/images/share.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        });
+        embedpano({
+            swf: "tour.swf",
+            xml: "tour.xml",
+            target: "pano",
+            html5: "prefer",
+            mobilescale: 1.0,
+            passQueryParameters: true
+        });
+        var closePopup = function (name) {
+            $("#content_1").css('z-index','4');
+            $("#content_2").css('z-index','3');
+            // $("#content_1").css('background','rgba(19,52,113,0.8)');
+            //  $("#content_2").css('background','rgba(19,52,113,0.3)');
+            $("#content_1").animate({left:'96px',top:'324px'});
+            $("#content_2").animate({left:'126px',top:'224px'});
+            $("#content_1 .content-title").addClass('title1');
+            $("#content_2 .content-title").removeClass('title1');
+            console.log(name);
+            $('#'+name).hide();
+            $('.background-cover').hide();
+            $('.new_window').hide();
+            $('.app_window').hide();
+            $("#mobile").val("");
+            $('#error-info').html('');
+            $('#sure').show();
+            $('#get-luck').hide();
+            PostData(1);
+        };
+        var showSharePopup = function () {
+            var shareImg = document.createElement("img");
+            shareImg.src = "images/share.png";
+            shareImg.style.position = "absolute";
+            shareImg.style.top = 0;
+            shareImg.style.right = 0;
+            shareImg.style.zIndex = 3300;
+            shareImg.style.backgroundColor = "transparent";
+            var e = document.getElementById("invite");
+            var modal = document.createElement("div");
+            modal.className = "my-reveal-modal-bg";
+            modal.appendChild(shareImg);
+            e.appendChild(modal);
+        };
+    </script>
+</div>
+</body>
+</html>
